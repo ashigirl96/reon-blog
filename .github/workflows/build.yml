@@ -1,0 +1,38 @@
+# 1. checkout
+# 2. yarn build -o ./dist
+# 3. ls -la ./dist
+
+name: Build and Deploy Next.js
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install node_modules
+        run: yarn
+      - name: TypeCheck
+        run: yarn typecheck
+      - name: Export
+        run: yarn export -o outDir
+        env:
+          NEXT_PUBLIC_NOTION_API_KEY: ${{ secrets.NEXT_PUBLIC_NOTION_API_KEY }}
+      - name: List files in the repository
+        run: |
+          ls -la ${{ github.workspace }}
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-1
+      - name: Deploy to S3
+        #-- GitHub上に登録した変数を持ってくる --#
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        #-- 仮想マシン上でコマンドを実行 --#
+        run:
+          aws s3 sync --delete --region ap-northeast-1 ./outDir/ ${{ secrets.S3_BUCKET_NAME }}/
