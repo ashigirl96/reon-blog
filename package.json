@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^0.4.11",
+    "@tailwindcss/typography": "^0.5.2",
     "aws-sdk": "^2.1096.0",
     "dotenv": "^14.2.0",
     "framer-motion": "^5",
