@@ -7,22 +7,22 @@ type Link = {
 export const SITE_LINKS: Link[] = [
   {
     icon: '😄',
-    name: 'PROFILE',
+    name: 'Profile',
     url: '/profile',
   },
   {
     icon: '🗾',
-    name: 'TRAVEL GALLERY',
+    name: 'Travel Gallery',
     url: '/travels',
   },
   {
     icon: '💻',
-    name: 'TECH BLOG',
+    name: 'Tech Blog',
     url: '/tech-blogs',
   },
   {
     icon: '💭',
-    name: 'THINKING MEMO',
+    name: 'Thinking Memo',
     url: '/memos',
   },
 ]
