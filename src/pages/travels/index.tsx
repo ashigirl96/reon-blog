@@ -1,14 +1,12 @@
 import type { GetStaticProps, NextPage } from 'next'
-import { SiteLinks } from '@/components'
 import { Card } from '@/components'
 import { fetchCards, ICard } from '@/lib/notion/fetchGalleries'
 import { freshGalleries } from '@/lib/notion/freshGalleries'
 
 const Travels: NextPage<{ cards: ICard[] }> = ({ cards }) => {
   return (
-    <div className="flex space-x-8 flex-col md:flex-row">
-      <SiteLinks />
-      <div className="flex grow flex-wrap text-white max-w-full justify-center md:justify-start">
+    <>
+      <div className="flex gap-x-8 gap-y-4 justify-center flex-wrap">
         {cards.map(({ imgURL, title, date, feeling, tags }) => (
           <Card
             imgURL={imgURL}
@@ -19,7 +17,7 @@ const Travels: NextPage<{ cards: ICard[] }> = ({ cards }) => {
           />
         ))}
       </div>
-    </div>
+    </>
   )
 }
 
