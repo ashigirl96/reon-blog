@@ -1,5 +1,4 @@
 import { VFC } from 'react'
-import { DateTag, Tag } from '../Tag'
 
 type Props = {
   imgURL: string
@@ -11,22 +10,21 @@ type Props = {
 
 export const Card: VFC<Props> = ({ imgURL, title, date, tags, feeling }) => {
   return (
-    <div className="max-w-[20rem] space-y-1 w-80 mb-10 mr-10">
-      <div>
-        <img className="rounded-t-2xl object-cover h-60 w-80" src={imgURL} />
-      </div>
-      <div className="space-y-2">
-        <div className="text-2xl text-white">{title}</div>
-        <div className="flex justify-between">
-          <DateTag date={date} />
-          <div className="flex space-x-2">
-            {tags.map((name) => (
-              <Tag key={name} name={name} />
-            ))}
-          </div>
-        </div>
-        <div>
-          <div className="text-sm text-bgText">{feeling}</div>
+    <div className="card max-w-[20rem] space-y-1 bg-base-100 shadow-xl">
+      <figure>
+        <img
+          className="rounded-t-2xl object-cover h-60 min-w-[20rem]"
+          src={imgURL}
+        />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title text-primary-content">{title}</h2>
+        <div className="badge rounded-md badge-ghost">{date}</div>
+        <p className="">{feeling}</p>
+        <div className="card-actions justify-end">
+          {tags.map((tag) => (
+            <div className="badge badge-accent badge-outline">{tag}</div>
+          ))}
         </div>
       </div>
     </div>

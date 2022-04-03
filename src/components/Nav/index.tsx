@@ -3,10 +3,12 @@ import { SITE_LINKS } from '@/constants/site_links'
 
 export const Nav: VFC = () => {
   return (
-    <div className="mx-10 lg:mx-60 ">
+    <div>
       <div className="navbar bg-base-100 flex flex-wrap justify-center sm:justify-start">
         <div className="sm:flex-1 flex-none">
-          <a className="btn btn-ghost normal-case text-xl">1e0nhard's Blog</a>
+          <a className="btn btn-ghost normal-case text-xl" href="/">
+            1e0nhard's Blog
+          </a>
         </div>
         <div className="flex">
           <ul className="flex flex-wrap grow sm:w-1/2 menu menu-horizontal p-0 justify-center sm:justify-start">

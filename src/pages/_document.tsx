@@ -8,14 +8,16 @@ class MyDocument extends Document {
         <Head>
           <title>1e0nhard's Blog</title>
         </Head>
-        <body className="min-h-screen">
-          <Nav />
-          <div className="m-10">
-            <Main />
-            <NextScript />
+        <body>
+          <div className="min-h-screen 2xl:mx-72">
+            <Nav />
+            <div className="m-10">
+              <Main />
+              <NextScript />
+            </div>
           </div>
-          <Footer />
         </body>
+        <Footer />
         {/*<div className="drawer">*/}
         {/*  <input id="my-drawer" type="checkbox" className="drawer-toggle" />*/}
         {/*  <div className="drawer-content">*/}
