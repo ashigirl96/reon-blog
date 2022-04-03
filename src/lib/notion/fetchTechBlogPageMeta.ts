@@ -7,6 +7,7 @@ export type TechBlogPageMeta = {
   date: string
   name: string
   categories: string[]
+  text: string
 }[]
 
 export const fetchTechBlogPageMeta = async () => {

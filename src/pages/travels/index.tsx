@@ -16,7 +16,6 @@ const Travels: NextPage<{ cards: ICard[] }> = ({ cards }) => {
             tags={tags}
           />
         ))}
-        {/*</div>*/}
       </div>
     </>
   )
