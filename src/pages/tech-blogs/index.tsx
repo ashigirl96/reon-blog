@@ -6,12 +6,13 @@ import {
 } from '@/lib/notion/fetchTechBlogPageMeta'
 import Link from 'next/link'
 import { fetchBlock } from '@/lib/notion'
+import { CategoryTag, DateTag } from '@/components/Tag'
 
 const TechBlogsIndex: NextPage<{ pages: TechBlogPageMeta }> = ({ pages }) => {
   return (
     <div className="max-w-4xl md:max-w-2xl mx-auto space-y-4">
       <h1 className="text-3xl">
-        <p className="text-primary-content">
+        <p className="text-white">
           <span className="mr-2">🍆</span>1e0nhardの学習ログ
         </p>
       </h1>
@@ -26,7 +27,7 @@ const TechBlogsIndex: NextPage<{ pages: TechBlogPageMeta }> = ({ pages }) => {
             <Link href={`/tech-blogs/${pageId}`}>
               <a>
                 <div className="flex flex-col gap-y-2 bg-error p-6 bg-base-300 shadow-xl hover:shadow-2xl rounded-box">
-                  <div className="text-2xl text-primary-content flex justify-start items-center">
+                  <div className="text-2xl text-primary flex justify-start items-center">
                     <span className="mr-4 rounded-md text-3xl">{icon}</span>
                     {name}
                   </div>
@@ -34,9 +35,9 @@ const TechBlogsIndex: NextPage<{ pages: TechBlogPageMeta }> = ({ pages }) => {
                     <p>{text}</p>
                   </div>
                   <div className="flex gap-x-4">
-                    <div className="badge badge-ghost">{date}</div>
+                    <DateTag date={date} />
                     {categories.map((category) => (
-                      <div className="badge badge-info">{category}</div>
+                      <CategoryTag category={category} />
                     ))}
                   </div>
                 </div>

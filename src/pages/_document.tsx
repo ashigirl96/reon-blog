@@ -9,9 +9,9 @@ class MyDocument extends Document {
           <title>1e0nhard's Blog</title>
         </Head>
         <body>
-          <div className="min-h-screen 2xl:mx-72">
+          <div className="min-h-screen">
             <Nav />
-            <div className="m-10">
+            <div className="mx-1 md:mx-10">
               <Main />
               <NextScript />
             </div>

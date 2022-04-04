@@ -1,4 +1,5 @@
 import { VFC } from 'react'
+import { CategoryTag, DateTag } from '@/components/Tag'
 
 type Props = {
   imgURL: string
@@ -18,12 +19,12 @@ export const Card: VFC<Props> = ({ imgURL, title, date, tags, feeling }) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-primary-content">{title}</h2>
-        <div className="badge rounded-md badge-ghost">{date}</div>
+        <h2 className="card-title">{title}</h2>
+        <DateTag date={date} />
         <p className="">{feeling}</p>
         <div className="card-actions justify-end">
           {tags.map((tag) => (
-            <div className="badge badge-accent badge-outline">{tag}</div>
+            <CategoryTag category={tag} />
           ))}
         </div>
       </div>

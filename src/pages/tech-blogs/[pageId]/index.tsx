@@ -7,9 +7,8 @@ import {
 } from '@/lib/notion'
 import { VFC } from 'react'
 import { ParsedUrlQuery } from 'node:querystring'
-import { SiteLinks } from '@/components'
 import { fetchTechBlogPageMeta } from '@/lib/notion/fetchTechBlogPageMeta'
-import { DateTag, Tag } from '@/components/Tag'
+import { DateTag, CategoryTag } from '@/components/Tag'
 
 interface Params extends ParsedUrlQuery {
   pageId: string
@@ -23,14 +22,14 @@ type HeadProps = {
 }
 export const Header: VFC<HeadProps> = ({ icon, date, title, categories }) => {
   return (
-    <div className="">
+    <div>
       <div className="space-y-2 flex flex-col items-center">
         <div className="text-3xl">{icon}</div>
         <div className="text-white font-bold text-2xl">{title}</div>
         <div className="flex space-x-2">
           <DateTag date={date} />
           {categories.map((category) => (
-            <Tag name={category} />
+            <CategoryTag category={category} />
           ))}
           <div>10 min read</div>
         </div>
@@ -55,11 +54,10 @@ const TechBlogsShow: VFC<Props> = ({
   categories,
 }) => {
   return (
-    <div className="flex space-x-0 md:space-x-8 flex-col md:flex-row">
-      <SiteLinks />
+    <div className="flex max-w-6xl mx-auto">
       <div className="flex grow justify-center flex-col space-y-10">
         <Header icon={icon} title={name} date={date} categories={categories} />
-        <div className="flex flex-col mx-10">
+        <div className="flex flex-col mx-2 xs:mx-10 space-y-2">
           {processor.processSync(mdText).result}
         </div>
       </div>
