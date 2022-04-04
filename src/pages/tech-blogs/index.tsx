@@ -9,13 +9,15 @@ import { fetchBlock } from '@/lib/notion'
 import { CategoryTag, DateTag } from '@/components/Tag'
 import { Description } from '@/components/Description'
 import { Title } from '@/components/Title'
+import { Page } from '@/components/Page'
 
 const TechBlogsIndex: NextPage<{ pages: TechBlogPageMeta }> = ({ pages }) => {
   return (
-    <div className="max-w-7xl md:max-w-4xl mx-auto space-y-8 mt-10">
-      <Title title={'1e0nhardの学習ログ'} icon="💻" />
+    // <div className="max-w-7xl md:max-w-4xl mx-auto space-y-8 mt-10">
+    <Page width={4}>
+      <Title title="ゆるくわかったやつ" icon="💻" />
       <Description>
-        はじめまして、れおんです。本ブログでは最近学習したノートや、作ったみた系を文章化して投稿しています。主に、機械学習、Web、哲学などで学びがあったものを殴り書きしていきます。
+        本ブログでは最近学習したノートや、作ったみた系を文章化してゆるく投稿しています。主に、機械学習、Web、哲学などで学びがあったものを殴り書きしていきます。
       </Description>
       <div className="pt-4 flex flex-col gap-y-4">
         {pages.map(({ pageId, icon, date, name, categories, text }) => {
@@ -42,7 +44,7 @@ const TechBlogsIndex: NextPage<{ pages: TechBlogPageMeta }> = ({ pages }) => {
           )
         })}
       </div>
-    </div>
+    </Page>
   )
 }
 

@@ -4,10 +4,11 @@ import { fetchCards, ICard } from '@/lib/notion/fetchGalleries'
 import { freshGalleries } from '@/lib/notion/freshGalleries'
 import { Title } from '@/components/Title'
 import { Description } from '@/components/Description'
+import { Page } from '@/components/Page'
 
 const Travels: NextPage<{ cards: ICard[] }> = ({ cards }) => {
   return (
-    <div className="max-w-7xl md:max-w-7xl mx-auto space-y-8 mt-10">
+    <Page width={7}>
       <Title title="適当にパシャったやつ" icon="🗾️" />
       <Description>
         散歩中に見つけた景色をぼーっと観ながら、その時に感じていた情緒を言語化したもの(ポエム)と共に載せてギャラリーっぽくしてみました。
@@ -23,7 +24,7 @@ const Travels: NextPage<{ cards: ICard[] }> = ({ cards }) => {
           />
         ))}
       </div>
-    </div>
+    </Page>
   )
 }
 
