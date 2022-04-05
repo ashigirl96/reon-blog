@@ -5,6 +5,7 @@ import {
   DataThemes,
   DataThemesTypes,
 } from '@/components/DataTheme'
+import Link from 'next/link'
 
 export const Nav: VFC = () => {
   const { setDataTheme } = useDataTheme()
@@ -20,10 +21,12 @@ export const Nav: VFC = () => {
           <ul className="flex flex-wrap grow sm:w-1/2 menu menu-horizontal p-0 justify-center sm:justify-start">
             {SITE_LINKS.map((site) => (
               <li className="flex">
-                <a href={site.url} className="gap-2">
-                  <span className="text-2xl">{site.icon}</span>
-                  {site.name}
-                </a>
+                <Link href={site.url}>
+                  <a className="gap-2">
+                    <span className="text-2xl">{site.icon}</span>
+                    {site.name}
+                  </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -60,7 +63,7 @@ export const Nav: VFC = () => {
           </label>
           <ul
             tabIndex={0}
-            className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+            className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 space-y-2"
           >
             {/* @ts-expect-error */}
             {Object.keys(DataThemes).map((theme: DataThemesTypes) => {

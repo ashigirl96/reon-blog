@@ -2,9 +2,11 @@ import { createContext, FC, useContext, useState } from 'react'
 
 export const DataThemes = {
   dracula: 'dracula',
+  lemonade: 'lemonade',
   valentine: 'valentine',
   night: 'night',
-  halloween: 'halloween,',
+  winter: 'winter',
+  halloween: 'halloween',
 } as const
 
 export type DataThemesTypes = keyof typeof DataThemes
