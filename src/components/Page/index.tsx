@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Footer, Nav } from '@/components'
 import classNames from 'classnames'
 
 type Props = {
@@ -6,14 +7,24 @@ type Props = {
 }
 export const Page: FC<Props> = ({ children, width }) => {
   return (
-    <div
-      className={classNames(
-        `mx-auto space-y-8 mt-10 max-w-7xl`,
-        maxWith(width),
-      )}
-    >
-      {children}
-    </div>
+    <>
+      <body>
+        <div className="min-h-screen">
+          <Nav />
+          <div className="mx-1 md:mx-10">
+            <div
+              className={classNames(
+                `mx-auto space-y-8 mt-10 max-w-7xl`,
+                maxWith(width),
+              )}
+            >
+              {children}
+            </div>
+          </div>
+        </div>
+      </body>
+      <Footer />
+    </>
   )
 }
 
