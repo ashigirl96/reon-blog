@@ -19,7 +19,7 @@ module.exports = {
   variants: {
     backgroundColor: ['responsive', 'focus', 'active', 'hover'],
   },
-  plugins: [require('daisyui')],
+  plugins: [require('daisyui'), require('@tailwindcss/typography')],
   daisyui: {
     styled: true,
     themes: true,

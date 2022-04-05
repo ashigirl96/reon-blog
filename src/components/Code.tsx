@@ -1,9 +1,17 @@
 import { FC } from 'react'
 
 export const Code: FC = ({ children }) => {
+  // @ts-expect-error
+  const codeLines: string[] = children[0].props.children[0].split('\n')
   return (
-    <span className="bg-yellow text-grays rounded-sm px-1 mx-0.5 whitespace-pre-line">
-      {children}
-    </span>
+    <div className="mockup-code">
+      {codeLines.map((code, index) => (
+        <pre data-prefix={index}>{code}</pre>
+      ))}
+    </div>
   )
+}
+
+export const Pre: FC = ({ children }) => {
+  return <pre>{children}</pre>
 }

@@ -15,6 +15,7 @@ import {
   OrderedList,
   Anchor,
   Quote,
+  Pre,
 } from '@/components'
 
 export const processor = unified()
@@ -35,5 +36,6 @@ export const processor = unified()
       ul: UnorderedList,
       ol: OrderedList,
       blockquote: Quote,
+      pre: Pre,
     },
   })

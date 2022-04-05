@@ -1,5 +1,4 @@
 import type { GetStaticPaths, GetStaticProps } from 'next'
-import { processor } from '@/lib/remark/notion2component'
 import {
   constructMarkdownObject,
   fetchTechBlogPage,
@@ -9,7 +8,7 @@ import { VFC } from 'react'
 import { ParsedUrlQuery } from 'node:querystring'
 import { fetchTechBlogPageMeta } from '@/lib/notion/fetchTechBlogPageMeta'
 import { DateTag, CategoryTag } from '@/components/Tag'
-import { Page } from '@/components'
+import { Page, ReactMarkdown } from '@/components'
 
 interface Params extends ParsedUrlQuery {
   pageId: string
@@ -65,7 +64,8 @@ const TechBlogsShow: VFC<Props> = ({
             categories={categories}
           />
           <div className="flex flex-col mx-2 xs:mx-10 space-y-2">
-            {processor.processSync(mdText).result}
+            <ReactMarkdown text={mdText} />
+            {/*{processor.processSync(mdText).result}*/}
           </div>
         </div>
       </div>
