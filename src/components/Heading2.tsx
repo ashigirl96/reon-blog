@@ -2,8 +2,8 @@ import { FC } from 'react'
 
 export const Heading2: FC = ({ children }) => {
   return (
-    <h2 className="bg-grays  py-1 mb-1">
-      <div className="text-2xl p-2">{children}</div>
+    <h2 className="bg-primary py-1 text-2xl">
+      <div className="bg-primary-content p-2">{children}</div>
     </h2>
   )
 }

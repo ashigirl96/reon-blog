@@ -9,6 +9,7 @@ import { VFC } from 'react'
 import { ParsedUrlQuery } from 'node:querystring'
 import { fetchTechBlogPageMeta } from '@/lib/notion/fetchTechBlogPageMeta'
 import { DateTag, CategoryTag } from '@/components/Tag'
+import { Page } from '@/components'
 
 interface Params extends ParsedUrlQuery {
   pageId: string
@@ -54,14 +55,21 @@ const TechBlogsShow: VFC<Props> = ({
   categories,
 }) => {
   return (
-    <div className="flex max-w-6xl mx-auto">
-      <div className="flex grow justify-center flex-col space-y-10">
-        <Header icon={icon} title={name} date={date} categories={categories} />
-        <div className="flex flex-col mx-2 xs:mx-10 space-y-2">
-          {processor.processSync(mdText).result}
+    <Page width={7}>
+      <div className="flex max-w-6xl mx-auto">
+        <div className="flex grow justify-center flex-col space-y-10">
+          <Header
+            icon={icon}
+            title={name}
+            date={date}
+            categories={categories}
+          />
+          <div className="flex flex-col mx-2 xs:mx-10 space-y-2">
+            {processor.processSync(mdText).result}
+          </div>
         </div>
       </div>
-    </div>
+    </Page>
   )
 }
 
