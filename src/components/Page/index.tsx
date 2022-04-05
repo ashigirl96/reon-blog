@@ -1,14 +1,16 @@
 import { FC } from 'react'
 import { Footer, Nav } from '@/components'
 import classNames from 'classnames'
+import { useDataTheme } from '@/components/DataTheme'
 
 type Props = {
   width: number
 }
 export const Page: FC<Props> = ({ children, width }) => {
+  const { dataTheme } = useDataTheme()
   return (
     <>
-      <body>
+      <body data-theme={dataTheme}>
         <div className="min-h-screen">
           <Nav />
           <div className="mx-1 md:mx-10">
@@ -22,8 +24,8 @@ export const Page: FC<Props> = ({ children, width }) => {
             </div>
           </div>
         </div>
+        <Footer />
       </body>
-      <Footer />
     </>
   )
 }

@@ -1,23 +1,25 @@
 import { createContext, FC, useContext, useState } from 'react'
 
-export type DataThemes =
-  | 'dark'
-  | 'valentine'
-  | 'night'
-  | 'dracula'
-  | 'halloween'
+export const DataThemes = {
+  dracula: 'dracula',
+  valentine: 'valentine',
+  night: 'night',
+  halloween: 'halloween,',
+} as const
+
+export type DataThemesTypes = keyof typeof DataThemes
 
 interface DataThemeProviderProps {
-  color: DataThemes
+  color: DataThemesTypes
 }
 interface ContextProps {
-  readonly dataTheme: DataThemes
+  readonly dataTheme: DataThemesTypes
   // eslint-disable-next-line no-unused-vars
-  readonly setDataTheme: (color: DataThemes) => void
+  readonly setDataTheme: (color: DataThemesTypes) => void
 }
 
 export const DataThemeContext = createContext<ContextProps>({
-  dataTheme: 'dark',
+  dataTheme: 'dracula',
   setDataTheme: () => null,
 })
 
@@ -25,7 +27,7 @@ export const DataThemeProvider: FC<DataThemeProviderProps> = ({
   children,
   color,
 }) => {
-  const [dataTheme, setDataTheme] = useState<DataThemes>(color)
+  const [dataTheme, setDataTheme] = useState<DataThemesTypes>(color)
 
   return (
     <DataThemeContext.Provider value={{ dataTheme, setDataTheme }}>
