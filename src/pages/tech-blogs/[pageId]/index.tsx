@@ -25,7 +25,7 @@ export const Header: VFC<HeadProps> = ({ icon, date, title, categories }) => {
     <div>
       <div className="space-y-2 flex flex-col items-center">
         <div className="text-3xl">{icon}</div>
-        <div className="text-white font-bold text-2xl">{title}</div>
+        <div className=" font-bold text-2xl">{title}</div>
         <div className="flex space-x-2">
           <DateTag date={date} />
           {categories.map((category) => (

@@ -6,16 +6,12 @@ export const List: FC = ({ children }) => {
 
 export const UnorderedList: FC = ({ children }) => {
   return (
-    <ul role="list" className="marker:text-sky-400 list-disc pl-5 text-white">
+    <ul role="list" className="marker:text-sky-400 list-disc pl-5 ">
       {children}
     </ul>
   )
 }
 
 export const OrderedList: FC = ({ children }) => {
-  return (
-    <ol className="list-decimal marker:text-sky-400 pl-5 text-white">
-      {children}
-    </ol>
-  )
+  return <ol className="list-decimal marker:text-sky-400 pl-5 ">{children}</ol>
 }

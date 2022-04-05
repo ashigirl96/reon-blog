@@ -6,7 +6,7 @@ export const Anchor: FC<Props> = ({ children, href }) => {
   return (
     <Link href={href}>
       <a
-        className="underline hover:bg-yellow hover:text-white"
+        className="underline hover:bg-yellow hover:"
         target="_blank"
         rel="noopener noreferrer"
       >

@@ -28,7 +28,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      {/*<div className="flex grow flex-wrap text-white max-w-full justify-center mt-auto">*/}
+      {/*<div className="flex grow flex-wrap  max-w-full justify-center mt-auto">*/}
       {/*  <div className="text-center space-y-2">*/}
       {/*    <div className="text-5xl ">*/}
       {/*      1E0NHARD96's <span className="text-yellow mx-3 md:mx-0">BLOG</span>*/}

@@ -25,7 +25,7 @@ const TechBlogsIndex: NextPage<{ pages: TechBlogPageMeta }> = ({ pages }) => {
             <Link href={`/tech-blogs/${pageId}`}>
               <a>
                 <div className="flex flex-col gap-y-2 bg-error p-6 bg-base-300 shadow-xl hover:shadow-2xl rounded-box">
-                  <div className="text-2xl text-white flex justify-start items-center">
+                  <div className="text-2xl  flex justify-start items-center">
                     <span className="mr-4 rounded-md text-3xl">{icon}</span>
                     {name}
                   </div>
