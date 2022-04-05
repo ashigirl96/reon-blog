@@ -21,8 +21,15 @@ export const blockToMarkdownObject = (
     strikethrough: text.annotations.strikethrough,
     underline: text.annotations.underline,
     code: text.annotations.code,
+    equation: text?.equation?.expression,
   }))
   switch (notionType) {
+    case 'equation':
+      return {
+        type: 'equation',
+        text,
+        children: notionChildren,
+      }
     case 'paragraph':
       return {
         type: 'paragraph',

@@ -6,6 +6,7 @@ export type MarkdownText = {
   strikethrough: boolean
   underline: boolean
   code: boolean
+  equation?: string
 }
 
 export type NotionType =
@@ -18,11 +19,15 @@ export type NotionType =
   | 'code'
   | 'to_do'
   | 'paragraph'
+  | 'equation'
   | 'default'
 
 export type NotionObject = {
   [key in NotionType]: {
     text?: {
+      equation?: {
+        expression: string
+      }
       type: 'text'
       text: { content: string; link: null | string }
       plain_text: string
@@ -54,6 +59,7 @@ export type MarkdownObject =
   | Todo
   | Code
   | Paragraph
+  | Equation
 
 interface NormalMarkdownObject {
   text: MarkdownText[]
@@ -96,4 +102,9 @@ export interface NumberedListItem extends NormalMarkdownObject {
 
 export interface Paragraph extends NormalMarkdownObject {
   type: 'paragraph'
+}
+
+export interface Equation extends NormalMarkdownObject {
+  type: 'equation'
+  // expression: string
 }

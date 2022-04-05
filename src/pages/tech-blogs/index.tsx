@@ -13,7 +13,6 @@ import { Page } from '@/components/Page'
 
 const TechBlogsIndex: NextPage<{ pages: TechBlogPageMeta }> = ({ pages }) => {
   return (
-    // <div className="max-w-7xl md:max-w-4xl mx-auto space-y-8 mt-10">
     <Page width={4}>
       <Title title="ゆるくわかったやつ" icon="💻" />
       <Description>

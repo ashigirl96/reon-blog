@@ -9,8 +9,13 @@ import {
   Quote,
   UnorderedList,
 } from '@/components'
+import rehypeStringify from 'rehype-stringify'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
+import 'katex/dist/katex.min.css'
 
 import { FC, VFC } from 'react'
+import remarkParse from 'remark-parse'
 
 export const Div: FC = ({ children }) => {
   // @ts-expect-error
@@ -24,6 +29,8 @@ type Props = { text: string }
 export const ReactMarkdown: VFC<Props> = ({ text }) => {
   return (
     <ReactMarkdownOriginal
+      remarkPlugins={[remarkParse, remarkMath]}
+      rehypePlugins={[rehypeStringify, rehypeKatex]}
       components={{
         h1: Heading1,
         h2: Heading2,

@@ -15,6 +15,7 @@ export const markdownrify = (
 
 const _markdownrify = (x: MarkdownObject, generation: number = 0) => {
   const text = x.text.map((text) => markdownText(text)).join('')
+  console.log(JSON.stringify(text, null, 2))
   const tab = '\t'.repeat(generation)
   const element = (() => {
     switch (x.type) {
@@ -49,7 +50,8 @@ const _markdownrify = (x: MarkdownObject, generation: number = 0) => {
 
 const markdownText = (x: MarkdownText): string => {
   let content = x.content
-  const { bold, italic, strikethrough, underline, code, href } = x
+  const { bold, italic, strikethrough, underline, code, href, equation } = x
+  content = equation ? '$' + equation + '$' : content
   content = bold ? `**${content}**` : content
   content = italic ? `*${content}*` : content
   content = strikethrough ? `~~${content}~~` : content
