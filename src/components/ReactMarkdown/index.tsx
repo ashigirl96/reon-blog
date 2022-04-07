@@ -6,7 +6,6 @@ import {
   Heading2,
   Heading3,
   List,
-  Quote,
   UnorderedList,
 } from '@/components'
 import rehypeStringify from 'rehype-stringify'
@@ -22,7 +21,7 @@ export const Div: FC = ({ children }) => {
   if (children[0].split('\n').length > 1) {
     return <>{children}</>
   }
-  return <code className="bg-primary">{children}</code>
+  return <code className="text-primary">{children}</code>
 }
 
 type Props = { text: string }
@@ -36,7 +35,7 @@ export const ReactMarkdown: VFC<Props> = ({ text }) => {
         h2: Heading2,
         h3: Heading3,
         li: List,
-        blockquote: Quote,
+        // blockquote: Quote,
         ul: UnorderedList,
         pre: Code,
         code: Div,

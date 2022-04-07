@@ -54,7 +54,7 @@ const TechBlogsShow: VFC<Props> = ({
   categories,
 }) => {
   return (
-    <Page width={7}>
+    <Page width={4}>
       <div className="flex max-w-6xl mx-auto">
         <div className="flex grow justify-center flex-col space-y-10">
           <Header
@@ -64,8 +64,10 @@ const TechBlogsShow: VFC<Props> = ({
             categories={categories}
           />
           <div className="flex flex-col mx-2 xs:mx-10 space-y-2">
-            <ReactMarkdown text={mdText} />
-            {/*{processor.processSync(mdText).result}*/}
+            <article className="prose min-w-fit">
+              <ReactMarkdown text={mdText} />
+              {/*{processor.processSync(mdText).result}*/}
+            </article>
           </div>
         </div>
       </div>
