@@ -20,9 +20,10 @@ export const SITE_LINKS: Link[] = [
     name: 'Tech Blog',
     url: '/tech-blogs',
   },
-  {
-    icon: '💭',
-    name: 'Thinking Memo',
-    url: '/memos',
-  },
+  // TODO: いずれ実装する
+  // {
+  //   icon: '💭',
+  //   name: 'Thinking Memo',
+  //   url: '/memos',
+  // },
 ]
