@@ -1,8 +1,17 @@
 import { VFC } from 'react'
+import classNames from 'classnames'
 
-export const Footer: VFC = () => {
+type Props = {
+  margin: boolean
+}
+export const Footer: VFC<Props> = ({ margin }) => {
   return (
-    <footer className="mt-8 footer footer-center p-10 bg-primary text-primary-content gap-y-4">
+    <footer
+      className={classNames(
+        'footer footer-center p-10 bg-primary text-primary-content gap-y-4',
+        margin ? 'mt-8' : '',
+      )}
+    >
       <p className="font-bold">
         Built with Next.js + daisyUI + Notion API + S3
       </p>

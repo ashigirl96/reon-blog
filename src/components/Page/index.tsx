@@ -5,18 +5,26 @@ import { useDataTheme } from '@/components/DataTheme'
 
 type Props = {
   width: number
+  noMargin?: boolean
+  footerMargin?: boolean
 }
-export const Page: FC<Props> = ({ children, width }) => {
+export const Page: FC<Props> = ({
+  children,
+  width,
+  noMargin,
+  footerMargin,
+}) => {
   const { dataTheme } = useDataTheme()
   return (
-    <>
+    <main>
       <body data-theme={dataTheme}>
         <div className="min-h-screen">
           <Nav />
-          <div className="mx-1 md:mx-10">
+          <div className={classNames(noMargin ? '' : 'mx-1 md:mx-10')}>
             <div
               className={classNames(
-                `mx-auto space-y-8 mt-10 max-w-7xl`,
+                `mx-auto space-y-8`,
+                noMargin ? 'max-w-full' : 'max-w-7xl mt-10',
                 maxWith(width),
               )}
             >
@@ -24,9 +32,9 @@ export const Page: FC<Props> = ({ children, width }) => {
             </div>
           </div>
         </div>
-        <Footer />
+        <Footer margin={footerMargin === undefined ? true : footerMargin} />
       </body>
-    </>
+    </main>
   )
 }
 
