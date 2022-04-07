@@ -13,7 +13,7 @@ const Travels: NextPage<{ cards: ICard[] }> = ({ cards }) => {
       <Description>
         散歩中に見つけた景色をぼーっと観ながら、その時に感じていた情緒を言語化したもの(ポエム)と共に載せてギャラリーっぽくしてみました。
       </Description>
-      <div className="flex gap-x-8 gap-y-4 justify-center flex-wrap max-w-7xl mx-auto">
+      <div className="flex gap-x-8 gap-y-8 justify-center flex-wrap max-w-7xl mx-auto">
         {cards.map(({ imgURL, title, date, feeling, tags }) => (
           <Card
             imgURL={imgURL}
