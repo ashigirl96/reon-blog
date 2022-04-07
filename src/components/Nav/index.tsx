@@ -13,9 +13,9 @@ export const Nav: VFC = () => {
     <div>
       <div className="navbar bg-base-100 flex flex-wrap justify-center sm:justify-start">
         <div className="sm:flex-1 flex-none">
-          <a className="btn btn-ghost normal-case text-xl" href="/">
-            1e0nhard's Blog
-          </a>
+          <Link href={'/'}>
+            <a className="btn btn-ghost normal-case text-xl">1e0nhard's Blog</a>
+          </Link>
         </div>
         <div className="flex">
           <ul className="flex flex-wrap grow sm:w-1/2 menu menu-horizontal p-0 justify-center sm:justify-start">
