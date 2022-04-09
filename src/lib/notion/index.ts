@@ -20,3 +20,8 @@ export { constructMarkdownObject } from './constructMarkdownObject'
 export { fetchBlock } from './fetchBlock'
 export { fetchCards } from './fetchGalleries'
 export { fetchTechBlogPage } from './fetchTechBlogPage'
+export { freshGalleries } from './freshGalleries'
+export { fetchTechBlogPageMeta } from './fetchTechBlogPageMeta'
+export type { TechBlogPageMeta } from './fetchTechBlogPageMeta'
+
+export type { ICard } from './fetchGalleries'

@@ -1,15 +1,12 @@
 import type { NextPage } from 'next'
 import { GetStaticProps } from 'next'
+import Link from 'next/link'
 import {
+  fetchBlock,
   fetchTechBlogPageMeta,
   TechBlogPageMeta,
-} from '@/lib/notion/fetchTechBlogPageMeta'
-import Link from 'next/link'
-import { fetchBlock } from '@/lib/notion'
-import { CategoryTag, DateTag } from '@/components/Tag'
-import { Description } from '@/components/Description'
-import { Title } from '@/components/Title'
-import { Page } from '@/components/Page'
+} from '@/lib/notion'
+import { CategoryTag, DateTag, Description, Title, Page } from '@/components'
 
 const TechBlogsIndex: NextPage<{ pages: TechBlogPageMeta }> = ({ pages }) => {
   return (

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Footer, Nav } from '@/components'
+import { Footer, Nav } from './internals'
 import classNames from 'classnames'
 import { useDataTheme } from '@/components/DataTheme'
 

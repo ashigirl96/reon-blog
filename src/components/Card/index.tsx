@@ -1,5 +1,5 @@
 import { VFC } from 'react'
-import { CategoryTag, DateTag } from '@/components/Tag'
+import { CategoryTag, DateTag } from '@/components'
 
 type Props = {
   imgURL: string

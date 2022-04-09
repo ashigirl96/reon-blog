@@ -1,10 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next'
-import { Card } from '@/components'
-import { fetchCards, ICard } from '@/lib/notion/fetchGalleries'
-import { freshGalleries } from '@/lib/notion/freshGalleries'
-import { Title } from '@/components/Title'
-import { Description } from '@/components/Description'
-import { Page } from '@/components/Page'
+import { freshGalleries, fetchCards, ICard } from '@/lib/notion'
+import { Card, Description, Page, Title } from '@/components'
 
 const Travels: NextPage<{ cards: ICard[] }> = ({ cards }) => {
   return (

@@ -1,14 +1,13 @@
 import type { GetStaticPaths, GetStaticProps } from 'next'
+import { VFC } from 'react'
+import { ParsedUrlQuery } from 'node:querystring'
 import {
   constructMarkdownObject,
   fetchTechBlogPage,
   markdownrify,
+  fetchTechBlogPageMeta,
 } from '@/lib/notion'
-import { VFC } from 'react'
-import { ParsedUrlQuery } from 'node:querystring'
-import { fetchTechBlogPageMeta } from '@/lib/notion/fetchTechBlogPageMeta'
-import { DateTag, CategoryTag } from '@/components/Tag'
-import { Page, ReactMarkdown } from '@/components'
+import { Page, ReactMarkdown, DateTag, CategoryTag } from '@/components'
 
 interface Params extends ParsedUrlQuery {
   pageId: string
