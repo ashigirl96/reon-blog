@@ -7,8 +7,11 @@ import {
   TechBlogPageMeta,
 } from '@/lib/notion'
 import { CategoryTag, DateTag, Description, Title, Page } from '@/components'
+import { useRouter } from 'next/router'
 
 const TechBlogsIndex: NextPage<{ pages: TechBlogPageMeta }> = ({ pages }) => {
+  const router = useRouter()
+  console.log(router.pathname)
   return (
     <Page width={4}>
       <Title title="ゆるくわかったやつ" icon="💻" />
@@ -18,7 +21,7 @@ const TechBlogsIndex: NextPage<{ pages: TechBlogPageMeta }> = ({ pages }) => {
       <div className="pt-4 flex flex-col gap-y-8">
         {pages.map(({ pageId, icon, date, name, categories, text }) => {
           return (
-            <Link href={`/tech-blogs/${pageId}`}>
+            <Link href={`/blogs/${pageId}`}>
               <a>
                 <div className="flex flex-col gap-y-2 bg-error p-6 bg-base-300 hover:shadow-xl rounded-box">
                   <div className="text-2xl  flex justify-start items-center">

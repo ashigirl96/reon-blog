@@ -12,13 +12,13 @@ export const SITE_LINKS: Link[] = [
   },
   {
     icon: '🗾',
-    name: 'Travel Gallery',
-    url: '/travels',
+    name: 'Gallery',
+    url: '/gallery',
   },
   {
     icon: '💻',
-    name: 'Tech Blog',
-    url: '/tech-blogs',
+    name: 'Blog',
+    url: '/blogs',
   },
   // TODO: いずれ実装する
   // {
