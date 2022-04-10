@@ -1,10 +1,15 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { freshGalleries, fetchCards, ICard } from '@/lib/notion'
 import { Card, Description, Page, Title } from '@/components'
+import { Meta } from '@/constants/meta'
 
-const Travels: NextPage<{ cards: ICard[] }> = ({ cards }) => {
+const Gallery: NextPage<{ cards: ICard[] }> = ({ cards }) => {
   return (
-    <Page width={7}>
+    <Page
+      width={7}
+      title={Meta.Gallery.Title}
+      description={Meta.Gallery.Description}
+    >
       <Title title="適当にパシャったやつ" icon="🗾️" />
       <Description>
         散歩中に見つけた景色をぼーっと観ながら、その時に感じていた情緒を言語化したもの(ポエム)と共に載せてギャラリーっぽくしてみました。
@@ -34,4 +39,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default Travels
+export default Gallery

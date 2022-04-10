@@ -2,21 +2,27 @@ import { FC } from 'react'
 import { Footer, Nav } from './internals'
 import classNames from 'classnames'
 import { useDataTheme } from '@/components/DataTheme'
+import { CommonMeta } from '@/components'
 
 type Props = {
   width: number
   noMargin?: boolean
   footerMargin?: boolean
+  title: string
+  description: string
 }
 export const Page: FC<Props> = ({
   children,
   width,
   noMargin,
   footerMargin,
+  title,
+  description,
 }) => {
   const { dataTheme } = useDataTheme()
   return (
     <main>
+      <CommonMeta title={title} description={description} />
       <body data-theme={dataTheme}>
         <div className="min-h-screen">
           <Nav />

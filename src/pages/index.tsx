@@ -3,7 +3,13 @@ import { Page } from '@/components'
 
 const Home: NextPage = () => {
   return (
-    <Page width={7} noMargin footerMargin={false}>
+    <Page
+      width={7}
+      noMargin
+      footerMargin={false}
+      title="1e0nhard's Blog"
+      description="top"
+    >
       <div className="flex flex-col md:flex-row max-h-full">
         <div className="hero min-h-screen">
           {/*背景をぼかしてる */}

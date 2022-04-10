@@ -1,0 +1,1 @@
+export { pathState } from './router'
