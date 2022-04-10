@@ -6,14 +6,16 @@ import {
   fetchTechBlogPageMeta,
   TechBlogPageMeta,
 } from '@/lib/notion'
-import { CategoryTag, DateTag, Description, Title, Page } from '@/components'
-import { useRouter } from 'next/router'
+import { CategoryTag, DateTag, Description, Page, Title } from '@/components'
+import { Meta } from '@/constants/meta'
 
 const TechBlogsIndex: NextPage<{ pages: TechBlogPageMeta }> = ({ pages }) => {
-  const router = useRouter()
-  console.log(router.pathname)
   return (
-    <Page width={4}>
+    <Page
+      width={4}
+      title={Meta.Blogs.Title}
+      description={Meta.Blogs.Description}
+    >
       <Title title="ゆるくわかったやつ" icon="💻" />
       <Description>
         本ブログでは最近学習したノートや、作ったみた系を文章化してゆるく投稿しています。主に、機械学習、Web、哲学などで学びがあったものを殴り書きしていきます。

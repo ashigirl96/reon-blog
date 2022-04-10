@@ -53,7 +53,7 @@ const TechBlogsShow: VFC<Props> = ({
   categories,
 }) => {
   return (
-    <Page width={4}>
+    <Page width={4} title={name} description={mdText}>
       <div className="flex max-w-6xl mx-auto">
         <div className="flex grow justify-center flex-col space-y-10">
           <Header
