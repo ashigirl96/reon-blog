@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       description="top"
     >
       <div className="flex flex-col md:flex-row max-h-full">
-        <div className="hero min-h-screen">
+        <div className="hero min-h-[75vh]">
           {/*背景をぼかしてる */}
           <div className="hero-overlay bg-opacity-80" />
           {/* heroの中身 */}

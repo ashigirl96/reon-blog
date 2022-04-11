@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
-import { Page } from '@/components'
+import { Page, Title, Profile } from '@/components'
 import { Meta } from '@/constants/meta'
-import { Profile } from '@/components/Profile'
 
 const ProfileIndex: NextPage = () => {
   return (
@@ -10,6 +9,7 @@ const ProfileIndex: NextPage = () => {
       title={Meta.Profile.Title}
       description={Meta.Profile.Description}
     >
+      <Title title="ポートフォリオ的な" icon="😁️" />
       <Profile />
     </Page>
   )

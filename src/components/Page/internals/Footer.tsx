@@ -8,8 +8,8 @@ export const Footer: VFC<Props> = ({ margin }) => {
   return (
     <footer
       className={classNames(
-        'footer footer-center p-10 bg-primary text-primary-content gap-y-4',
-        margin ? 'mt-8' : '',
+        'footer footer-center p-4 bg-primary text-primary-content gap-y-0',
+        margin ? 'mt-16' : '',
       )}
     >
       <p className="font-bold">

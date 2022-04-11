@@ -21,26 +21,28 @@ export const Page: FC<Props> = ({
 }) => {
   const { dataTheme } = useDataTheme()
   return (
-    <main>
-      <CommonMeta title={title} description={description} />
-      <body data-theme={dataTheme}>
-        <div className="min-h-screen">
-          <Nav />
-          <div className={classNames(noMargin ? '' : 'mx-1 md:mx-10')}>
-            <div
-              className={classNames(
-                `mx-auto space-y-8`,
-                noMargin ? 'max-w-full' : 'max-w-7xl mt-10',
-                maxWith(width),
-              )}
-            >
-              {children}
+    <div className="flex flex-col min-h-screen" data-theme={dataTheme}>
+      <main className="flex-grow">
+        <CommonMeta title={title} description={description} />
+        <body>
+          <div>
+            <Nav />
+            <div className={classNames(noMargin ? '' : 'mx-1 md:mx-10')}>
+              <div
+                className={classNames(
+                  `mx-auto space-y-8`,
+                  noMargin ? 'max-w-full' : 'max-w-7xl mt-10',
+                  maxWith(width),
+                )}
+              >
+                {children}
+              </div>
             </div>
           </div>
-        </div>
-        <Footer margin={footerMargin === undefined ? true : footerMargin} />
-      </body>
-    </main>
+        </body>
+      </main>
+      <Footer margin={footerMargin === undefined ? true : footerMargin} />
+    </div>
   )
 }
 
