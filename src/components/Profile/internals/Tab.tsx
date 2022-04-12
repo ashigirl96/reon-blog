@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 export const Tabs = {
   Self: 'Self',
-  History: 'History',
+  Career: 'Career',
   Skill: 'Skill',
 } as const
 

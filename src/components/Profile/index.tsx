@@ -1,5 +1,5 @@
 import { useState, VFC } from 'react'
-import { Tabs, Tab, SelfIntroduce } from './internals'
+import { Tabs, Tab, SelfIntroduce, Career } from './internals'
 import type { TabType } from './internals'
 
 export const Profile: VFC = () => {
@@ -14,10 +14,10 @@ export const Profile: VFC = () => {
           setCurrentTab={() => setTab(Tabs.Self)}
         />
         <Tab
-          tabName="学籍・職歴"
+          tabName="経歴"
           currentTab={tab}
-          selfTab={Tabs.History}
-          setCurrentTab={() => setTab(Tabs.History)}
+          selfTab={Tabs.Career}
+          setCurrentTab={() => setTab(Tabs.Career)}
         />
         <Tab
           tabName="スキルセット"
@@ -28,6 +28,7 @@ export const Profile: VFC = () => {
       </div>
 
       {tab === Tabs.Self && <SelfIntroduce />}
+      {tab === Tabs.Career && <Career />}
     </div>
   )
 }
