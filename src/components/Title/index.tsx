@@ -10,7 +10,6 @@ export const Title: VFC<Props> = ({ title, icon }) => {
       <p className="">
         <span className="mr-2">{icon}</span>
         {title}
-        <span className="ml-2">{icon}</span>
       </p>
     </h1>
   )

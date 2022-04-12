@@ -9,7 +9,7 @@ const ProfileIndex: NextPage = () => {
       title={Meta.Profile.Title}
       description={Meta.Profile.Description}
     >
-      <Title title="ポートフォリオ的な" icon="😁️" />
+      <Title title="プロフィール" icon="😁️" />
       <Profile />
     </Page>
   )
