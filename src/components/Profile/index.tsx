@@ -1,5 +1,5 @@
 import { useState, VFC } from 'react'
-import { Tabs, Tab, SelfIntroduce, Career } from './internals'
+import { Tabs, Tab, SelfIntroduce, Career, Skills } from './internals'
 import type { TabType } from './internals'
 
 export const Profile: VFC = () => {
@@ -29,6 +29,7 @@ export const Profile: VFC = () => {
 
       {tab === Tabs.Self && <SelfIntroduce />}
       {tab === Tabs.Career && <Career />}
+      {tab === Tabs.Skill && <Skills />}
     </div>
   )
 }
