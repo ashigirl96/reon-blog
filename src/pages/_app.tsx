@@ -5,7 +5,7 @@ import { DataThemeProvider } from '@/components/DataTheme'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <DataThemeProvider color="dracula">
+    <DataThemeProvider color="night">
       <Component {...pageProps} />
     </DataThemeProvider>
   )

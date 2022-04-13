@@ -21,7 +21,7 @@ interface ContextProps {
 }
 
 export const DataThemeContext = createContext<ContextProps>({
-  dataTheme: 'dracula',
+  dataTheme: 'night',
   setDataTheme: () => null,
 })
 

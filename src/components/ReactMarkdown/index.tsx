@@ -9,6 +9,7 @@ import {
   List,
   UnorderedList,
   Pre,
+  Strong,
 } from './internals'
 import rehypeStringify from 'rehype-stringify'
 import remarkMath from 'remark-math'
@@ -30,6 +31,7 @@ export const ReactMarkdown: VFC<Props> = ({ text }) => {
         pre: Pre,
         code: Code,
         a: Anchor,
+        strong: Strong,
       }}
     >
       {text}
