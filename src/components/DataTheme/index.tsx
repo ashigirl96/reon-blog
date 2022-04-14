@@ -7,6 +7,8 @@ export const DataThemes = {
   night: 'night',
   winter: 'winter',
   halloween: 'halloween',
+  dark: 'dark',
+  light: 'light',
 } as const
 
 export type DataThemesTypes = keyof typeof DataThemes
@@ -21,7 +23,7 @@ interface ContextProps {
 }
 
 export const DataThemeContext = createContext<ContextProps>({
-  dataTheme: 'night',
+  dataTheme: 'dark',
   setDataTheme: () => null,
 })
 

@@ -1,5 +1,5 @@
 const blogTitle = (title: string) => {
-  return `${title} | 1e0nhard's blog`
+  return `${title} | Reon's blog`
 }
 
 export const Meta = {

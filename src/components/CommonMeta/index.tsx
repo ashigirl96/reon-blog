@@ -6,7 +6,7 @@ type Props = {
   description: string
 }
 export const CommonMeta: VFC<Props> = ({
-  title = "1e0nhard's blog",
+  title = "Reon's blog",
   description = 'Reon Nishimuraのブログ',
 }) => {
   return (
