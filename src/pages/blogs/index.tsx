@@ -59,11 +59,15 @@ export const getStaticProps: GetStaticProps = async () => {
           .map((block) => {
             // @ts-expect-error
             const type = block.type
+            // @ts-expect-error
+            if (block[type].text === undefined) {
+              return ''
+            }
             return (
               // @ts-expect-error
               block[type].text
                 // @ts-expect-error
-                .map((x) => x.plain_text)
+                .map((x) => x?.plain_text || '')
                 .flat()
             )
           })
