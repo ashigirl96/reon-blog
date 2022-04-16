@@ -62,7 +62,7 @@ const TechBlogsShow: VFC<Props> = ({
             date={date}
             categories={categories}
           />
-          <div className="flex flex-col mx-2 xs:mx-10 space-y-2">
+          <div className="flex flex-col mx-2 xs:mx-10 space-y-2 items-center">
             <article className="prose min-w-fit">
               <ReactMarkdown text={mdText} />
               {/*{processor.processSync(mdText).result}*/}
