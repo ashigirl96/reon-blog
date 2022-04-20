@@ -6,3 +6,4 @@ export {
   GALLERY_BUCKET_NAME,
   TECH_BLOG_DATABASE_ID,
 } from './env_vars'
+export { SKILLS } from './skills'
