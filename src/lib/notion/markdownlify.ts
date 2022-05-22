@@ -15,7 +15,7 @@ export const markdownrify = (
 
 const _markdownrify = (x: MarkdownObject, generation: number = 0) => {
   const text = x.text.map((text) => markdownText(text)).join('')
-  console.log(JSON.stringify(text, null, 2))
+  // console.log(JSON.stringify(text, null, 2))
   const tab = '\t'.repeat(generation)
   const element = (() => {
     switch (x.type) {
@@ -41,6 +41,10 @@ const _markdownrify = (x: MarkdownObject, generation: number = 0) => {
         const content = text.split('\n').join('\n' + tab)
         const end = tab + '```'
         return `${start}\n${content}\n${end}`
+      case 'equation':
+        return text
+      case 'inline_equation':
+        return text
       default:
         return ''
     }
@@ -50,8 +54,18 @@ const _markdownrify = (x: MarkdownObject, generation: number = 0) => {
 
 const markdownText = (x: MarkdownText): string => {
   let content = x.content
-  const { bold, italic, strikethrough, underline, code, href, equation } = x
-  content = equation ? '$' + equation + '$' : content
+  const {
+    bold,
+    italic,
+    strikethrough,
+    underline,
+    code,
+    href,
+    equation,
+    inline_equation,
+  } = x
+  content = inline_equation ? '$' + inline_equation + '$' : content
+  content = equation ? '\n$$\n' + equation + '\n$$\n' : content
   content = bold ? `**${content}**` : content
   content = italic ? `*${content}*` : content
   content = strikethrough ? `~~${content}~~` : content

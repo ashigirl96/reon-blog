@@ -82,7 +82,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
     params!.pageId,
   )
   const mdText = markdownrify(mdObj, 0)
-  console.log(mdText)
+  // console.log(mdText)
   return {
     props: {
       mdText,

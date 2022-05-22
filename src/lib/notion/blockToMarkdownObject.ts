@@ -5,7 +5,30 @@ export const blockToMarkdownObject = (
   notionObject: NotionObject,
   notionChildren: MarkdownObject[],
 ): MarkdownObject => {
-  const { language, checked, text: _text } = notionObject[notionType]
+  const {
+    language,
+    checked,
+    text: _text,
+    expression,
+  } = notionObject[notionType]
+  if (!!expression) {
+    return {
+      type: 'equation',
+      text: [
+        {
+          content: '',
+          href: '',
+          bold: false,
+          italic: false,
+          strikethrough: false,
+          underline: false,
+          code: false,
+          equation: expression,
+        },
+      ],
+      children: notionChildren,
+    }
+  }
   if (_text === undefined) {
     return {
       type: 'paragraph',
@@ -21,12 +44,12 @@ export const blockToMarkdownObject = (
     strikethrough: text.annotations.strikethrough,
     underline: text.annotations.underline,
     code: text.annotations.code,
-    equation: text?.equation?.expression,
+    inline_equation: text?.equation?.expression,
   }))
   switch (notionType) {
     case 'equation':
       return {
-        type: 'equation',
+        type: 'inline_equation',
         text,
         children: notionChildren,
       }

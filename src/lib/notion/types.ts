@@ -6,6 +6,7 @@ export type MarkdownText = {
   strikethrough: boolean
   underline: boolean
   code: boolean
+  inline_equation?: string
   equation?: string
 }
 
@@ -41,6 +42,7 @@ export type NotionObject = {
         color: string
       }
     }[]
+    expression?: string
     checked: boolean
     language: 'rust' | 'typescript'
   }
@@ -60,6 +62,7 @@ export type MarkdownObject =
   | Code
   | Paragraph
   | Equation
+  | InlineEquation
 
 interface NormalMarkdownObject {
   text: MarkdownText[]
@@ -106,5 +109,10 @@ export interface Paragraph extends NormalMarkdownObject {
 
 export interface Equation extends NormalMarkdownObject {
   type: 'equation'
+  // expression: string
+}
+
+export interface InlineEquation extends NormalMarkdownObject {
+  type: 'inline_equation'
   // expression: string
 }

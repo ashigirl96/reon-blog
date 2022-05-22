@@ -23,6 +23,12 @@ export const fetchTechBlogPageMeta = async () => {
         },
       ],
     },
+    sorts: [
+      {
+        property: 'date',
+        direction: 'descending',
+      },
+    ],
   })
 
   const { results } = response
