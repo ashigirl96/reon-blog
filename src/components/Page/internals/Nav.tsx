@@ -1,11 +1,13 @@
 import { VFC } from 'react'
 import { SITE_LINKS } from '@/constants/site_links'
-import { useDataTheme, DataThemes } from '@/components/DataTheme'
+import { DataThemes } from '@/components/DataTheme'
 import Link from 'next/link'
 import classNames from 'classnames'
+import { useRecoilState } from 'recoil'
+import { colorScheme } from '@/atoms/colorScheme'
 
 export const Nav: VFC = () => {
-  const { setDataTheme, dataTheme } = useDataTheme()
+  const [dataTheme, setDataTheme] = useRecoilState(colorScheme)
   return (
     <div>
       <div className="navbar bg-base-100 flex flex-wrap justify-center sm:justify-start">

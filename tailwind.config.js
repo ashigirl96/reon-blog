@@ -28,6 +28,6 @@ module.exports = {
     logs: true,
     rtl: false,
     prefix: '',
-    darkTheme: 'night',
+    darkTheme: 'winter',
   },
 }

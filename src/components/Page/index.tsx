@@ -1,8 +1,9 @@
 import { FC } from 'react'
 import { Footer, Nav } from './internals'
 import classNames from 'classnames'
-import { useDataTheme } from '@/components/DataTheme'
 import { CommonMeta } from '@/components'
+import { colorScheme } from '@/atoms/colorScheme'
+import { useRecoilValue } from 'recoil'
 
 type Props = {
   width: number
@@ -19,7 +20,7 @@ export const Page: FC<Props> = ({
   title,
   description,
 }) => {
-  const { dataTheme } = useDataTheme()
+  const dataTheme = useRecoilValue(colorScheme)
   return (
     <div className="flex flex-col min-h-screen" data-theme={dataTheme}>
       <main className="flex-grow">

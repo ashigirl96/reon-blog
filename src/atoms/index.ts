@@ -1,1 +1,1 @@
-export { pathState } from './router'
+export { pathState } from './colorScheme'
