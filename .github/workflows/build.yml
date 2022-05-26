@@ -15,7 +15,7 @@ jobs:
       - name: TypeCheck
         run: yarn typecheck
       - name: Export
-        run: yarn export -o outDir
+        run: yarn export
         env:
           NEXT_PUBLIC_NOTION_API_KEY: ${{ secrets.NEXT_PUBLIC_NOTION_API_KEY }}
           NEXT_PUBLIC_AWS_ACCESS_KEY_ID: ${{ secrets.NEXT_PUBLIC_AWS_ACCESS_KEY_ID }}
