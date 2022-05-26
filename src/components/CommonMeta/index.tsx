@@ -46,6 +46,10 @@ export const CommonMeta: VFC<Props> = ({
         content={`${process.env.SITE_URL}/ogp_large.png`}
       />
       <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="google-site-verification"
+        content="Ah2fPp6nmOX3vilQlTGtEiSUKGcl-hk3W9Vv8yPQyj8"
+      />
     </Head>
   )
 }

@@ -1,6 +1,6 @@
 import { atom } from 'recoil'
 import { recoilPersist } from 'recoil-persist'
-import { DataThemesTypes, DataThemes } from '@/components/DataTheme'
+import { DataThemesTypes } from '@/components/DataTheme'
 
 const { persistAtom } = recoilPersist({
   key: 'recoil-persist',
@@ -12,18 +12,18 @@ export const pathState = atom({
   default: '',
 })
 
-const sessionStorageColorScheme = () => {
-  if (typeof window === 'undefined') {
-    return 'night'
-  }
-  const colorScheme = JSON.parse(sessionStorage['recoil-persist'])[
-    'colorScheme'
-  ]
-  return colorScheme == undefined ? DataThemes.night : colorScheme
-}
+// const sessionStorageColorScheme = () => {
+//   if (typeof window === 'undefined') {
+//     return 'night'
+//   }
+//   const colorScheme = JSON.parse(sessionStorage['recoil-persist'])[
+//     'colorScheme'
+//   ]
+//   return colorScheme == undefined ? DataThemes.night : colorScheme
+// }
 
 export const colorScheme = atom<DataThemesTypes>({
   key: 'colorScheme',
-  default: sessionStorageColorScheme(),
+  default: 'night',
   effects: [persistAtom],
 })
